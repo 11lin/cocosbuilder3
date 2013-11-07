@@ -119,6 +119,18 @@
     return setting;
 }
 
++ (ResolutionSetting*) setting640x960
+{
+    ResolutionSetting* setting = [self settingIPhone];
+    
+    setting.name = @"iPhone HD 640x960";
+    setting.width = 640;
+    setting.height = 960;
+    
+    return setting;
+}
+
+
 + (ResolutionSetting*) settingIPhoneLandscape
 {
     ResolutionSetting* setting = [self settingIPhone];
@@ -159,6 +171,17 @@
     setting.name = @"iPhone 5 Portrait";
     setting.width = 320;
     setting.height = 568;
+    
+    return setting;
+}
+
++ (ResolutionSetting*) settingIPhone5PortraitHD
+{
+    ResolutionSetting* setting = [self settingIPhone];
+    
+    setting.name = @"iPhone 5 Portrait HD";
+    setting.width = 640;
+    setting.height = 1136;
     
     return setting;
 }

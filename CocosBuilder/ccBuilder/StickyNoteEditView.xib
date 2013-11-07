@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
-		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">10K549</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
-		<string key="IBDocument.AppKitVersion">1038.36</string>
-		<string key="IBDocument.HIToolboxVersion">461.00</string>
+		<int key="IBDocument.SystemTarget">1070</int>
+		<string key="IBDocument.SystemVersion">11G63b</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1138.51</string>
+		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">1938</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<string>NSScrollView</string>
-			<string>NSCustomView</string>
-			<string>NSTextView</string>
-			<string>NSButtonCell</string>
 			<string>NSButton</string>
-			<string>NSScroller</string>
+			<string>NSButtonCell</string>
 			<string>NSCustomObject</string>
+			<string>NSCustomView</string>
+			<string>NSScrollView</string>
+			<string>NSScroller</string>
+			<string>NSTextView</string>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -114,10 +114,10 @@
 												<string>public.url</string>
 											</object>
 										</object>
-										<string key="NSFrameSize">{167, 36}</string>
+										<string key="NSFrameSize">{178, 28}</string>
 										<reference key="NSSuperview" ref="226901479"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="241288741"/>
+										<reference key="NSNextKeyView" ref="927735847"/>
 										<object class="NSTextContainer" key="NSTextContainer" id="907231446">
 											<object class="NSLayoutManager" key="NSLayoutManager">
 												<object class="NSTextStorage" key="NSTextStorage">
@@ -134,7 +134,7 @@
 												<nil key="NSDelegate"/>
 											</object>
 											<reference key="NSTextView" ref="646016164"/>
-											<double key="NSWidth">167</double>
+											<double key="NSWidth">178</double>
 											<int key="NSTCFlags">1</int>
 										</object>
 										<object class="NSTextViewSharedData" key="NSSharedData">
@@ -152,7 +152,7 @@
 													<string>NSBackgroundColor</string>
 													<string>NSColor</string>
 												</object>
-												<object class="NSMutableArray" key="dict.values">
+												<object class="NSArray" key="dict.values">
 													<bool key="EncodedWithXMLCoder">YES</bool>
 													<object class="NSColor">
 														<int key="NSColorSpace">6</int>
@@ -183,7 +183,7 @@
 													<string>NSCursor</string>
 													<string>NSUnderline</string>
 												</object>
-												<object class="NSMutableArray" key="dict.values">
+												<object class="NSArray" key="dict.values">
 													<bool key="EncodedWithXMLCoder">YES</bool>
 													<object class="NSColor">
 														<int key="NSColorSpace">1</int>
@@ -197,14 +197,16 @@
 												</object>
 											</object>
 											<nil key="NSDefaultParagraphStyle"/>
+											<nil key="NSTextFinder"/>
+											<int key="NSPreferredTextFinderStyle">1</int>
 										</object>
 										<int key="NSTVFlags">6</int>
-										<string key="NSMaxSize">{463, 1e+07}</string>
+										<string key="NSMaxSize">{463, 10000000}</string>
 										<string key="NSMinize">{161, 28}</string>
 										<nil key="NSDelegate"/>
 									</object>
 								</object>
-								<string key="NSFrame">{{1, 1}, {167, 166}}</string>
+								<string key="NSFrame">{{1, 1}, {178, 166}}</string>
 								<reference key="NSSuperview" ref="444531579"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="646016164"/>
@@ -244,7 +246,6 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 								<string key="NSFrame">{{168, 1}, {11, 166}}</string>
 								<reference key="NSSuperview" ref="444531579"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<int key="NSsFlags">256</int>
 								<reference key="NSTarget" ref="444531579"/>
 								<string key="NSAction">_doScroller:</string>
@@ -268,8 +269,8 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<string key="NSFrame">{{10, 15}, {180, 168}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="927735847"/>
-						<int key="NSsFlags">18</int>
+						<reference key="NSNextKeyView" ref="226901479"/>
+						<int key="NSsFlags">133138</int>
 						<reference key="NSVScroller" ref="241288741"/>
 						<reference key="NSHScroller" ref="927735847"/>
 						<reference key="NSContentView" ref="226901479"/>
@@ -414,7 +415,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>8.IBPluginDependency</string>
 					<string>9.IBPluginDependency</string>
 				</object>
-				<object class="NSMutableArray" key="dict.values">
+				<object class="NSArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -483,7 +484,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string>editView</string>
 							<string>textView</string>
 						</object>
-						<object class="NSMutableArray" key="dict.values">
+						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSButton</string>
 							<string>NSView</string>
@@ -498,7 +499,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string>editView</string>
 							<string>textView</string>
 						</object>
-						<object class="NSMutableArray" key="dict.values">
+						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
 								<string key="name">closeButton</string>
@@ -536,7 +537,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				<string>notes-close</string>
 				<string>notes-close-down</string>
 			</object>
-			<object class="NSMutableArray" key="dict.values">
+			<object class="NSArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{10, 10}</string>
 				<string>{10, 10}</string>

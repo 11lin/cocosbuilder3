@@ -374,7 +374,16 @@ static SequencerHandler* sharedSequencerHandler;
     }
     
     CCNode* node = item;
-    return node.displayName;
+    //change displayName to  displayName+{var name} by Colin3dmax
+    NSLog([node.displayName stringByAppendingFormat:@" {%@}", [node extraPropForKey:@"memberVarAssignmentName"]]);
+    
+    if([[node extraPropForKey:@"memberVarAssignmentName"] length]>0){
+        return [node.displayName stringByAppendingFormat:@" {%@}", [node extraPropForKey:@"memberVarAssignmentName"]];
+    }else{
+       return node.displayName; 
+    }
+    
+    
 }
 
 - (void) outlineView:(NSOutlineView *)outlineView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn byItem:(id)item

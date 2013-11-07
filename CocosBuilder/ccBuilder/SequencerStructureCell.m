@@ -120,6 +120,7 @@
             
             NSString* displayName = [[node.plugIn.nodePropertiesDict objectForKey:prop] objectForKey:@"displayName"];
             
+            
             if (i>0)
                 propNameRect.origin.y += kCCBSeqDefaultRowHeight;
             else

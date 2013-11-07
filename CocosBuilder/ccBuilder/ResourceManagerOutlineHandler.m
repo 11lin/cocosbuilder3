@@ -238,6 +238,37 @@
     return icon;
 }
 
++ (NSImage *)makeThumbnailImageFromImageSource:(CGImageSourceRef)imageSource {
+    NSImage *result;
+    // This code needs to be threadsafe, as it will be called from the background thread.
+    // The easiest way to ensure you only use stack variables is to make it a class method.
+    NSNumber *maxPixelSize = [NSNumber numberWithInteger:16];
+    NSDictionary *imageOptions = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  (id)kCFBooleanTrue,(id)kCGImageSourceCreateThumbnailFromImageIfAbsent,
+                                  maxPixelSize, (id)kCGImageSourceThumbnailMaxPixelSize,
+                                  kCFBooleanTrue, (id)kCGImageSourceCreateThumbnailWithTransform,
+                                  nil];
+    CGImageRef imageRef = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, (CFDictionaryRef)imageOptions);
+    if (imageRef != NULL) {
+        CGRect rect;
+        rect.origin.x = 0;
+        rect.origin.y = 0;
+        rect.size.width = CGImageGetWidth(imageRef);
+        rect.size.height = CGImageGetHeight(imageRef);
+        result = [[[NSImage alloc] init] autorelease];
+        [result setFlipped:YES];
+        [result setSize:NSMakeSize(rect.size.width, rect.size.height)];
+        [result lockFocus];
+        CGContextDrawImage((CGContextRef)[[NSGraphicsContext currentContext] graphicsPort], rect, imageRef);
+        
+        [result unlockFocus];
+        CFRelease(imageRef);
+    } else {
+        result = nil;
+    }
+    return result;
+}
+
 - (void)outlineView:(NSOutlineView *)outlineView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {
     NSImage* icon = NULL;
@@ -248,7 +279,13 @@
 #warning Do all images by type
         if (res.type == kCCBResTypeImage)
         {
-            icon = [self smallIconForFileType:@"png"];
+            //icon = [self smallIconForFileType:@"png"];
+            //NSLog(@"image path:%@",res.filePath);
+            NSURL *urlForImage = [[[NSURL alloc]initFileURLWithPath:res.filePath]autorelease];
+            CGImageSourceRef imageSource = CGImageSourceCreateWithURL((CFURLRef)urlForImage, nil);
+            icon =[[self class] makeThumbnailImageFromImageSource:imageSource];
+            
+            
         }
         else
         {

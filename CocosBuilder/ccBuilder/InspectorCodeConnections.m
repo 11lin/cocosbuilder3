@@ -85,6 +85,7 @@
 
 - (NSString*) memberVarAssignmentName
 {
+    CCLOG([selection extraPropForKey:@"memberVarAssignmentName"]);
     return [selection extraPropForKey:@"memberVarAssignmentName"];
 }
 
