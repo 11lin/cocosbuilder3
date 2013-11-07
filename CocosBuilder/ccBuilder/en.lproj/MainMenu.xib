@@ -2726,7 +2726,7 @@
 													<string key="NSFrame">{{1, 1}, {0, 64}}</string>
 													<reference key="NSSuperview" ref="605516856"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="808054622"/>
+													<reference key="NSNextKeyView" ref="15312564"/>
 												</object>
 											</object>
 											<string key="NSFrame">{{234, 16}, {1, 66}}</string>
@@ -2766,7 +2766,7 @@
 													<string key="NSFrame">{{1, 1}, {0, 96}}</string>
 													<reference key="NSSuperview" ref="638332341"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="329387741"/>
+													<reference key="NSNextKeyView" ref="808054622"/>
 												</object>
 											</object>
 											<string key="NSFrame">{{250, 0}, {1, 98}}</string>
@@ -2806,7 +2806,7 @@
 													<string key="NSFrame">{{1, 1}, {599, 0}}</string>
 													<reference key="NSSuperview" ref="15312564"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="21043842"/>
+													<reference key="NSNextKeyView" ref="286030503"/>
 												</object>
 											</object>
 											<string key="NSFrame">{{0, 15}, {601, 1}}</string>
@@ -2838,10 +2838,10 @@
 										<object class="NSCustomView" id="808054622">
 											<reference key="NSNextResponder" ref="1040455681"/>
 											<int key="NSvFlags">274</int>
-											<string key="NSFrame">{{0, 1}, {351, 83}}</string>
+											<string key="NSFrame">{{250, 15}, {351, 83}}</string>
 											<reference key="NSSuperview" ref="1040455681"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="286030503"/>
+											<reference key="NSNextKeyView" ref="21043842"/>
 											<string key="NSClassName">SequencerScrubberSelectionView</string>
 										</object>
 										<object class="NSCustomView" id="329387741">
@@ -2850,7 +2850,7 @@
 											<string key="NSFrame">{{250, 83}, {351, 14}}</string>
 											<reference key="NSSuperview" ref="1040455681"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="15312564"/>
+											<reference key="NSNextKeyView" ref="307606666"/>
 											<string key="NSClassName">SequencerTimelineView</string>
 										</object>
 										<object class="NSCustomView" id="21043842">
@@ -2983,7 +2983,7 @@
 											<string key="NSFrame">{{510, 100}, {84, 24}}</string>
 											<reference key="NSSuperview" ref="1040455681"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="308950031"/>
+											<reference key="NSNextKeyView" ref="508341981"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSImageCell" key="NSCell" id="476060479">
 												<int key="NSCellFlags">134217728</int>
@@ -3562,7 +3562,7 @@
 											<string key="NSFrame">{{230, 85}, {16, 9}}</string>
 											<reference key="NSSuperview" ref="1040455681"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="508341981"/>
+											<reference key="NSNextKeyView" ref="329387741"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSImageCell" key="NSCell" id="215944419">
 												<int key="NSCellFlags">134217728</int>
@@ -3599,7 +3599,7 @@
 											<string key="NSFrame">{{5, 83}, {220, 14}}</string>
 											<reference key="NSSuperview" ref="1040455681"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="307606666"/>
+											<reference key="NSNextKeyView" ref="308950031"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="479950179">
 												<int key="NSCellFlags">68157504</int>
@@ -3753,6 +3753,7 @@
 											<string key="NSFrame">{{284, 1}, {15, 678}}</string>
 											<reference key="NSSuperview" ref="949082143"/>
 											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView"/>
 											<reference key="NSTarget" ref="949082143"/>
 											<string key="NSAction">_doScroller:</string>
 											<double key="NSPercent">0.95999999999999996</double>
