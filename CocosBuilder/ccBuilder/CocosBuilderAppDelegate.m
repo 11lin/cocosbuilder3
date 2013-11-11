@@ -99,7 +99,7 @@
 
 
 @implementation CocosBuilderAppDelegate
-
+@synthesize searchField;
 @synthesize window;
 @synthesize projectSettings;
 @synthesize currentDocument;
@@ -1805,6 +1805,39 @@ static BOOL hideAllToNextSeparator;
     [self addCCObject:node toParent:parent];
 }
 
+- (IBAction)searchCCBFiles:(id)sender {
+    NSString * searchValue = [searchField stringValue];
+    NSLog(@"search ccb files:%@",searchValue);
+    if(self.projectSettings){
+        
+        for(int i=0;i<self.projectSettings.resourcePaths.count;i++)
+        {
+            NSString* path = (NSString *)[self.projectSettings.resourcePaths objectAtIndex:i];
+            NSLog("path:%@",path);
+        }
+        
+        
+        NSFileManager *manger = [NSFileManager defaultManager];
+        NSString * projectRoot = [self.projectSettings.projectPath stringByDeletingLastPathComponent];
+        NSLog(@"projectRoot:%@",projectRoot);
+        
+        NSMutableArray *files= [NSMutableArray arrayWithCapacity: 10];
+         for (NSString *filename in [manger enumeratorAtPath: projectRoot]){
+             
+             if ([filename rangeOfString:searchValue ].location>0) {
+                 [files addObject: filename];
+             }
+         }
+        for (NSString *filename in files ) {
+            NSLog(@"%@", filename);
+        }
+    
+    }else{
+        NSLog(@"projectRoot: no project opened");
+    }
+    
+}
+
 
 - (IBAction) copy:(id) sender
 {
@@ -2828,6 +2861,7 @@ static BOOL hideAllToNextSeparator;
     }
     return maxId + 1;
 }
+
 
 - (IBAction)menuTimelineSettings:(id)sender
 {

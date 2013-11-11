@@ -431,6 +431,7 @@
         {
             [[CocosBuilderAppDelegate appDelegate] openJSFile:res.filePath];
         }
+        //可以扩展其他文件类型的打开方式  by Colin3dmax
     }
     
 }

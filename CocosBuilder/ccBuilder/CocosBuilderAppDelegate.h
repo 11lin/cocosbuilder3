@@ -229,9 +229,12 @@ enum {
 @private
     MainWindow *window;
     
+    NSSearchField *searchField;
 }
 
 @property (assign) IBOutlet MainWindow *window;
+
+@property (assign) IBOutlet NSSearchField *searchField;     //搜索过滤文件
 
 @property (nonatomic,readonly) IBOutlet NSOutlineView* outlineProject;
 
@@ -290,6 +293,8 @@ enum {
 - (void) dropAddSpriteNamed:(NSString*)spriteFile inSpriteSheet:(NSString*)spriteSheetFile at:(CGPoint)pt parent:(CCNode*)parent;
 - (void) dropAddSpriteNamed:(NSString*)spriteFile inSpriteSheet:(NSString*)spriteSheetFile at:(CGPoint)pt;
 - (void) dropAddCCBFileNamed:(NSString*)ccbFile at:(CGPoint)pt parent:(CCNode*)parent;
+
+- (IBAction)searchCCBFiles:(id)sender;
 
 - (IBAction)menuTimelineSettings:(id)sender;
 
