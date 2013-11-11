@@ -1808,34 +1808,64 @@ static BOOL hideAllToNextSeparator;
 - (IBAction)searchCCBFiles:(id)sender {
     NSString * searchValue = [searchField stringValue];
     NSLog(@"search ccb files:%@",searchValue);
-    if(self.projectSettings){
+    
+    if(resManager && [resManager.activeDirectories count]>0){
         
-        for(int i=0;i<self.projectSettings.resourcePaths.count;i++)
-        {
-            NSString* path = (NSString *)[self.projectSettings.resourcePaths objectAtIndex:i];
-            NSLog("path:%@",path);
-        }
-        
-        
+        NSLog(@"resManager:%@",resManager);
+        //查找ccb
         NSFileManager *manger = [NSFileManager defaultManager];
-        NSString * projectRoot = [self.projectSettings.projectPath stringByDeletingLastPathComponent];
-        NSLog(@"projectRoot:%@",projectRoot);
         
         NSMutableArray *files= [NSMutableArray arrayWithCapacity: 10];
-         for (NSString *filename in [manger enumeratorAtPath: projectRoot]){
-             
-             if ([filename rangeOfString:searchValue ].location>0) {
-                 [files addObject: filename];
-             }
-         }
-        for (NSString *filename in files ) {
-            NSLog(@"%@", filename);
+        NSMutableArray *fileNames= [NSMutableArray arrayWithCapacity: 10];
+        for (RMDirectory* ad in resManager.activeDirectories) {
+            NSString *dir = ad.dirPath;
+            for (NSString *filename in [manger enumeratorAtPath: dir]){
+                int index = [[filename uppercaseString] rangeOfString:[searchValue uppercaseString] ].location;
+                NSString * extName = [filename pathExtension];
+                if(![extName isEqualToString:@""]){
+                    
+                    NSLog(@"extName:%@",extName);
+                }
+                if (index!=-1 && extName && [extName isEqualToString:@"ccb"]) {
+                    [fileNames addObject: [[[NSString alloc] initWithFormat:@"%@", filename] autorelease]];
+                    [files addObject: [[[NSString alloc] initWithFormat:@"%@/%@",dir, filename] autorelease]];
+                }
+            }
         }
-    
+        if([files count]>0){
+            //提示菜单
+            NSMenu *menu = [[NSMenu alloc] initWithTitle: @"results"];
+            for (int i=0; i<[files count]; i++) {
+                NSString * filename = [fileNames objectAtIndex:i];
+                NSString * filePath = [files objectAtIndex:i];
+                
+                NSMenuItem* menuItem = [menu addItemWithTitle: filename action: @selector(openSearchCCBFile:) keyEquivalent: @""];
+                [menuItem setRepresentedObject:filePath];
+            }
+            
+            NSEvent *event =  [NSEvent otherEventWithType: NSApplicationDefined
+                                                 location: [searchField frame].origin
+                                            modifierFlags: 0
+                                                timestamp: 0
+                                             windowNumber: [[searchField window] windowNumber]
+                                                  context: [[searchField window] graphicsContext]
+                                                  subtype: NSApplicationDefined
+                                                    data1: 0
+                                                    data2: 0];
+            
+            [NSMenu popUpContextMenu: [menu autorelease] withEvent: event forView: searchField];
+        }
+        
     }else{
         NSLog(@"projectRoot: no project opened");
     }
     
+}
+
+- (void) openSearchCCBFile:(id)sender
+{
+    NSMenuItem* menuItem = (NSMenuItem *)sender;
+    [self openFile: [menuItem representedObject]];
 }
 
 
