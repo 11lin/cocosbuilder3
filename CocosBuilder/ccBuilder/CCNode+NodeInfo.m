@@ -756,6 +756,9 @@
         else if ([prop isEqualToString:@"skew"]) return YES;
     }
     
+    //Add by Colin3dmax
+    if (self != [CocosScene cocosScene].rootNode && NSStringFromClass(self.class)  && [prop isEqualToString:@"goBack"]) return YES;
+            
     return NO;
 }
 

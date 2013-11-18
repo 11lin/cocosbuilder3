@@ -1351,6 +1351,10 @@ static BOOL hideAllToNextSeparator;
 
 - (void) openFile:(NSString*) fileName
 {
+    
+    // Update the title of the main window
+    [window setTitle:[NSString stringWithFormat:@"CocosBuilder - %@",fileName]];
+    
 	[[[CCDirector sharedDirector] view] lockOpenGLContext];
     
     // Check if file is already open
@@ -3567,6 +3571,7 @@ static BOOL hideAllToNextSeparator;
     else if (tag == 4) return @"displayFrame";
     else if (tag == 5) return @"opacity";
     else if (tag == 6) return @"color";
+    else if (tag == 7) return @"goBack";
     else return NULL;
 }
 
