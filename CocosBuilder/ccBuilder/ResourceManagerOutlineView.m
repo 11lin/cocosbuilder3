@@ -91,7 +91,7 @@
                 RMResource* clickedResource = clickedItem;
                 if (clickedResource.type == kCCBResTypeCCBFile)
                 {
-                    [item setEnabled:NO];
+                    [item setEnabled:YES];
                 }
                 else if (clickedResource.type == kCCBResTypeDirectory)
                 {

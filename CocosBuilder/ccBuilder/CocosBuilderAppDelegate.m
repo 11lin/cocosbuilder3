@@ -3449,17 +3449,34 @@ static BOOL hideAllToNextSeparator;
     NSUInteger idx = [sender tag];
     
     NSString* filename = [[outlineView itemAtRow:idx] filePath];
-    if (![[NSWorkspace sharedWorkspace] openFile:filename])
+    NSFileManager *filemgr;
+    NSDictionary *attribs;
+    filemgr=[NSFileManager defaultManager];
+    attribs =[filemgr attributesOfItemAtPath:filename error:NULL];
+    NSLog(@"File type %@",[attribs objectForKey:NSFileType]);
+    
+    if([[attribs objectForKey:NSFileType] isEqualToString:@"NSFileTypeRegular"])
     {
-        NSRange slash = [filename rangeOfString:@"/" options:NSBackwardsSearch];
-        
-        if (slash.location != NSNotFound)
+        NSURL *fileNameUrl = [NSURL fileURLWithPath:filename];
+        NSArray *fileURLs = [NSArray arrayWithObjects:fileNameUrl, nil];
+        [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:fileURLs];
+    }
+    else
+    {
+        if (![[NSWorkspace sharedWorkspace] openFile:filename])
         {
-            filename = [filename stringByReplacingCharactersInRange:slash withString: @"/resources-auto/"];
-            // Try again
-            [[NSWorkspace sharedWorkspace] openFile:filename];
+            NSRange slash = [filename rangeOfString:@"/" options:NSBackwardsSearch];
+            
+            if (slash.location != NSNotFound)
+            {
+                filename = [filename stringByReplacingCharactersInRange:slash withString: @"/resources-auto/"];
+                // Try again
+                [[NSWorkspace sharedWorkspace] openFile:filename];
+            }
         }
     }
+    
+    
 }
 
 - (IBAction)menuCreateSmartSpriteSheet:(id)sender

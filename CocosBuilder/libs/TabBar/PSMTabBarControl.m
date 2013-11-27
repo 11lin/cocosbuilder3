@@ -17,6 +17,8 @@
 //#import "PSMAdiumTabStyle.h"
 #import "PSMTabDragAssistant.h"
 #import "PSMTabBarController.h"
+#import "CCBDocument.h"
+
 
 @interface PSMTabBarControl (Private)
 
@@ -1487,6 +1489,19 @@
 
 - (void)tabClick:(id)sender {
 	[tabView selectTabViewItem:[sender representedObject]];
+    NSTabViewItem *tabViewItem=[sender representedObject];
+    PSMTabBarCell* tabCell = sender;
+    NSArray* docs = [tabView tabViewItems];
+    for (int i = 0; i < [docs count]; i++)
+    {
+        NSTabViewItem* viewItemTmp =(NSTabViewItem*)[docs objectAtIndex:i];
+        if (viewItemTmp == tabViewItem){
+            CCBDocument* doc = [viewItemTmp identifier];
+            [_window setTitle:[NSString stringWithFormat:@"CocosBuilder - %@",[doc fileName]]];
+            NSLog(@"%@",[doc fileName]);
+            break;
+        }
+    }
 }
 
 - (void)tabNothing:(id)sender {
