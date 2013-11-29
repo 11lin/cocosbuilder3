@@ -18,6 +18,7 @@
 		1F85452B18333A9D007EE48E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8544F81833106C007EE48E /* Icon.png */; };
 		1F85452D18333ACA007EE48E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7789ABC2133AA82000CEFCC7 /* Cocoa.framework */; };
 		1F85452E183342C6007EE48E /* CCBFileRunDelay.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 1F85451B18333848007EE48E /* CCBFileRunDelay.ccbPlugNode */; };
+		1F9A7E5B184877A1004139C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9A7E5A184877A1004139C7 /* Images.xcassets */; };
 		581130601639C52500A86D70 /* seq-startmarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 5811305F1639C52000A86D70 /* seq-startmarker.png */; };
 		581BCFE8162DADE7007DE600 /* CCBSplitHorizontalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BCFE7162DADE7007DE600 /* CCBSplitHorizontalView.m */; };
 		58FA2034162D73F3006B8856 /* TB_bottomPanel.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FA2031162D73F3006B8856 /* TB_bottomPanel.png */; };
@@ -881,6 +882,7 @@
 		1F8544F81833106C007EE48E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		1F85450518331178007EE48E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		1F85451B18333848007EE48E /* CCBFileRunDelay.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCBFileRunDelay.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F9A7E5A184877A1004139C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CocosBuilder/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		5811305E1639BF1200A86D70 /* SequencerTimelineDrawDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencerTimelineDrawDelegate.h; sourceTree = "<group>"; };
 		5811305F1639C52000A86D70 /* seq-startmarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seq-startmarker.png"; sourceTree = "<group>"; };
 		581BCFE6162DADE7007DE600 /* CCBSplitHorizontalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBSplitHorizontalView.h; sourceTree = "<group>"; };
@@ -2545,6 +2547,7 @@
 				E335CB071577C55F00A612EE /* Node info */,
 				776041E21498F5A70078095D /* Util */,
 				776041EE1498FC320078095D /* GUI Util */,
+				1F9A7E5A184877A1004139C7 /* Images.xcassets */,
 				7789ABC9133AA82000CEFCC7 /* Supporting Files */,
 			);
 			name = CocosBuilder;
@@ -4765,6 +4768,7 @@
 				E3DA6FF416CB293100B12FFB /* InspectorPopoverPosition.xib in Resources */,
 				E3DA6FF616CB2AC000B12FFB /* InspectorPopoverScaleLock.xib in Resources */,
 				E3DA6FF816CB2B2900B12FFB /* InspectorPopoverDegrees.xib in Resources */,
+				1F9A7E5B184877A1004139C7 /* Images.xcassets in Resources */,
 				E3DA6FFA16CB2B8700B12FFB /* InspectorPopoverSpriteFrame.xib in Resources */,
 				E3DA6FFC16CB2BEB00B12FFB /* InspectorPopoverByte.xib in Resources */,
 				E3DA6FFE16CB2C3C00B12FFB /* InspectorPopoverColor3.xib in Resources */,
@@ -5796,6 +5800,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5832,6 +5837,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
