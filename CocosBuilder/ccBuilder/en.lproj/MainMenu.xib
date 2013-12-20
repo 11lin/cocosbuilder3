@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A3028" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -177,14 +177,6 @@
                             <menuItem title="Run in CocosPlayer" keyEquivalent="r" id="1428">
                                 <connections>
                                     <action selector="menuPublishProjectAndRun:" target="494" id="1517"/>
-                                    <binding destination="494" name="enabled2" keyPath="projectSettings.javascriptBased" previousBinding="1521" id="1529">
-                                        <dictionary key="options">
-                                            <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                            <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            <integer key="NSNullPlaceholder" value="-1"/>
-                                        </dictionary>
-                                    </binding>
                                     <binding destination="494" name="enabled3" keyPath="connection.connected" previousBinding="1529" id="1810">
                                         <dictionary key="options">
                                             <integer key="NSNotApplicablePlaceholder" value="-1"/>
@@ -198,6 +190,14 @@
                                             <string key="NSValueTransformerName">NSIsNotNil</string>
                                         </dictionary>
                                     </binding>
+                                    <binding destination="494" name="enabled2" keyPath="projectSettings.javascriptBased" previousBinding="1521" id="1529">
+                                        <dictionary key="options">
+                                            <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                            <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                            <integer key="NSNullPlaceholder" value="-1"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </menuItem>
                             <menuItem title="Run in Browser" id="1854">
@@ -207,6 +207,19 @@
                                         <menuItem title="Safari" keyEquivalent="B" id="1870">
                                             <connections>
                                                 <action selector="menuPublishProjectAndRunInBrowser:" target="494" id="1874"/>
+                                                <binding destination="494" name="enabled" keyPath="projectSettings" id="1871">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSIsNotNil</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="494" name="enabled4" keyPath="projectSettings.isSafariExist" previousBinding="1873" id="1901">
+                                                    <dictionary key="options">
+                                                        <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                        <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                        <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                        <integer key="NSNullPlaceholder" value="-1"/>
+                                                    </dictionary>
+                                                </binding>
                                                 <binding destination="494" name="enabled2" keyPath="projectSettings.javascriptBased" previousBinding="1871" id="1872">
                                                     <dictionary key="options">
                                                         <integer key="NSNotApplicablePlaceholder" value="-1"/>
@@ -223,7 +236,18 @@
                                                         <integer key="NSNullPlaceholder" value="-1"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="494" name="enabled4" keyPath="projectSettings.isSafariExist" previousBinding="1873" id="1901">
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Chrome" id="1875">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="menuPublishProjectAndRunInBrowser:" target="494" id="1887"/>
+                                                <binding destination="494" name="enabled" keyPath="projectSettings" id="1877">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSIsNotNil</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="494" name="enabled4" keyPath="projectSettings.isChromeExist" previousBinding="1879" id="1904">
                                                     <dictionary key="options">
                                                         <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                         <integer key="NSNoSelectionPlaceholder" value="-1"/>
@@ -231,17 +255,6 @@
                                                         <integer key="NSNullPlaceholder" value="-1"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="494" name="enabled" keyPath="projectSettings" id="1871">
-                                                    <dictionary key="options">
-                                                        <string key="NSValueTransformerName">NSIsNotNil</string>
-                                                    </dictionary>
-                                                </binding>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Chrome" id="1875">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="menuPublishProjectAndRunInBrowser:" target="494" id="1887"/>
                                                 <binding destination="494" name="enabled2" keyPath="projectSettings.javascriptBased" previousBinding="1877" id="1878">
                                                     <dictionary key="options">
                                                         <integer key="NSNotApplicablePlaceholder" value="-1"/>
@@ -258,7 +271,18 @@
                                                         <integer key="NSNullPlaceholder" value="-1"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="494" name="enabled4" keyPath="projectSettings.isChromeExist" previousBinding="1879" id="1904">
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Firefox" id="1880">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="menuPublishProjectAndRunInBrowser:" target="494" id="1881"/>
+                                                <binding destination="494" name="enabled" keyPath="projectSettings" id="1882">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSIsNotNil</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="494" name="enabled4" keyPath="projectSettings.isFirefoxExist" previousBinding="1884" id="1907">
                                                     <dictionary key="options">
                                                         <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                         <integer key="NSNoSelectionPlaceholder" value="-1"/>
@@ -266,17 +290,6 @@
                                                         <integer key="NSNullPlaceholder" value="-1"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="494" name="enabled" keyPath="projectSettings" id="1877">
-                                                    <dictionary key="options">
-                                                        <string key="NSValueTransformerName">NSIsNotNil</string>
-                                                    </dictionary>
-                                                </binding>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Firefox" id="1880">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="menuPublishProjectAndRunInBrowser:" target="494" id="1881"/>
                                                 <binding destination="494" name="enabled2" keyPath="projectSettings.javascriptBased" previousBinding="1882" id="1883">
                                                     <dictionary key="options">
                                                         <integer key="NSNotApplicablePlaceholder" value="-1"/>
@@ -291,19 +304,6 @@
                                                         <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                         <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                         <integer key="NSNullPlaceholder" value="-1"/>
-                                                    </dictionary>
-                                                </binding>
-                                                <binding destination="494" name="enabled4" keyPath="projectSettings.isFirefoxExist" previousBinding="1884" id="1907">
-                                                    <dictionary key="options">
-                                                        <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                        <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                        <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                                        <integer key="NSNullPlaceholder" value="-1"/>
-                                                    </dictionary>
-                                                </binding>
-                                                <binding destination="494" name="enabled" keyPath="projectSettings" id="1882">
-                                                    <dictionary key="options">
-                                                        <string key="NSValueTransformerName">NSIsNotNil</string>
                                                     </dictionary>
                                                 </binding>
                                             </connections>
@@ -1186,7 +1186,7 @@ CA
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <popUpButtonCell key="cell" type="bevel" title="Item 1" bezelStyle="regularSquare" imagePosition="only" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" arrowPosition="noArrow" preferredEdge="maxY" autoenablesItems="NO" altersStateOfSelectedItem="NO" selectedItem="1946" id="1944">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="menu"/>
                                             <menu key="menu" title="OtherViews" autoenablesItems="NO" id="1945">
                                                 <items>
                                                     <menuItem title="Item 1" state="on" image="toolbar-btn-add" hidden="YES" id="1946"/>
@@ -1300,11 +1300,16 @@ CA
                                             <popUpButton verticalHuggingPriority="750" id="1573">
                                                 <rect key="frame" x="-3" y="85" width="256" height="15"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <popUpButtonCell key="cell" type="smallSquare" title="Timelines" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" transparent="YES" inset="2" pullsDown="YES" selectedItem="1580" id="1574">
+                                                <popUpButtonCell key="cell" type="smallSquare" title="Test" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" transparent="YES" inset="2" pullsDown="YES" selectedItem="Sn6-DV-eqK" id="1574">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
+                                                    <font key="font" metaFont="menu"/>
                                                     <menu key="menu" title="OtherViews" id="1575">
                                                         <items>
+                                                            <menuItem title="Test" id="Sn6-DV-eqK">
+                                                                <connections>
+                                                                    <action selector="menuTimelineSettings:" target="494" id="Gzb-RN-GJe"/>
+                                                                </connections>
+                                                            </menuItem>
                                                             <menuItem title="Timelines" id="1580">
                                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                                                 <menu key="submenu" title="Timelines" id="1581">
@@ -1350,7 +1355,7 @@ CA
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <popUpButtonCell key="cell" type="smallSquare" title="No Chained Sequence" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" transparent="YES" inset="2" pullsDown="YES" selectedItem="1678" id="1669">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
+                                                    <font key="font" metaFont="menu"/>
                                                     <menu key="menu" title="OtherViews" id="1670">
                                                         <items>
                                                             <menuItem title="No Chained Sequence" hidden="YES" id="1678">
