@@ -4343,9 +4343,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E398C02B14FB81A30078E771 /* Build configuration list for PBXNativeTarget "Cocos2D iPhone" */;
 			buildPhases = (
-				E398C01E14FB81A30078E771 /* Sources */,
 				E398C01F14FB81A30078E771 /* Frameworks */,
 				E398C02014FB81A30078E771 /* Resources */,
+				E398C01E14FB81A30078E771 /* Sources */,
 			);
 			buildRules = (
 			);
