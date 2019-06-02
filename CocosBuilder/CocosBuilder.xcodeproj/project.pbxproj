@@ -5829,7 +5829,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = CocosBuilder;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.13;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -5867,7 +5867,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = CocosBuilder;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.13;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
